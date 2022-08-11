@@ -2,15 +2,22 @@ import os
 import rasterio
 import numpy as np
 import torch
+import torchgeo
 from torch.utils.data import Dataset
+
+from rasterio.crs import CRS
+from torchgeo.datasets import RasterDataset, stack_samples
 
 class Permafrost(Dataset):
     def __init__(self, data_folders):
+        print('test')
         self.data = []
         for folder in data_folders:
             for file in os.listdir('../all_data/' + folder):
                 if file.endswith(".tiff"):
                     self.data.append(os.path.join("../all_data/" + folder, file))
+        super().__init__(root='../all_data/' + folder)
+        
     def __len__(self):
         return len(self.data)
     
