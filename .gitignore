@@ -1,6 +1,10 @@
 # Folders to ignore
 all_data/
 data/
+chopped_data/
+notebooks/runs/
+models/
+test/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
